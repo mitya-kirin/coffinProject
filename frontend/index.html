@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ритуальная служба — организация и сопровождение заказов ритуальных услуг</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <header id="header"></header>
+
+  <main>
+    <section class="hero">
+      <h1>Организация и сопровождение заказов ритуальных услуг</h1>
+      <p>В сложный момент мы берём на себя организацию всех необходимых процедур: подбор услуг и товаров, оформление документов, захоронение и поминальные мероприятия. Работаем круглосуточно и бережно.</p>
+      <div class="hero-actions">
+        <a href="services.html" class="btn btn-primary">Выбрать услуги и товары</a>
+        <a href="order.html" class="btn btn-primary">Оформить заявку</a>
+        <a href="cemetery.html" class="btn btn-primary">Карта кладбища</a>
+      </div>
+    </section>
+
+    <section class="section" style="text-align:center;">
+      <div class="section-title">
+        <h2>Для клиентов</h2>
+        <p>Создайте аккаунт, чтобы оформлять заказы, отслеживать статус и получать уведомления</p>
+      </div>
+      <div style="margin:20px auto;width:fit-content;">
+        <a href="register.html" class="btn btn-primary mb-8" style="padding:14px 32px;font-size:1.05rem;">Зарегистрироваться</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <h2>Каталог услуг и товаров</h2>
+        <p>Необходимые услуги и принадлежности — в одном месте</p>
+      </div>
+      <div class="grid grid-3" id="homeServices"></div>
+      <div class="center mt-32">
+        <a href="services.html" class="btn btn-primary">Открыть полный каталог</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <h2>Основные категории услуг</h2>
+        <p>Подберите необходимые услуги в нашем каталоге</p>
+      </div>
+      <div class="grid grid-3" id="homeCategories"></div>
+    </section>
+
+    <section class="section" style="background:var(--gray-light);border-radius:0;">
+      <div class="section-title">
+        <h2>Как оформить заказ</h2>
+        <p>Порядок действий — от заявки до завершения</p>
+      </div>
+      <div class="grid grid-4" id="stepsGrid"></div>
+    </section>
+
+    <section class="section">
+      <div class="grid grid-2" style="align-items:center;">
+        <div>
+          <h2 class="mb-8">Электронная карта кладбища</h2>
+          <p class="text-muted mb-16">Просматривайте участки и места захоронений, ищите захоронения по ФИО и датам, отслеживайте свободные места. Для поиска захоронений и оформления заявки необходимо войти в личный кабинет.</p>
+          <div class="row-flex">
+            <span class="text-sm"><span class="legend-dot" style="background:var(--green)"></span>свободное</span>
+            <span class="text-sm"><span class="legend-dot" style="background:var(--red)"></span>занятое</span>
+            <span class="text-sm"><span class="legend-dot" style="background:var(--yellow)"></span>зарезервировано</span>
+            <span class="text-sm"><span class="legend-dot" style="background:#b8bcc6"></span>недоступно</span>
+          </div>
+          <div class="row-flex mt-16">
+            <a href="cemetery.html" class="btn btn-primary">Открыть карту</a>
+            <a href="login.html" class="btn btn-outline">Войти для поиска захоронений</a>
+          </div>
+        </div>
+        <div class="card" style="padding:20px;">
+          <div class="cemetery-layout" style="min-height:320px;">
+            <div class="section-block" style="margin:0 0 12px;">
+              <div class="section-title-mini">Участок 1</div>
+              <div class="place-grid">
+                <div class="place free">1</div><div class="place occupied">2</div>
+                <div class="place free">3</div><div class="place reserved">4</div>
+                <div class="place occupied">5</div><div class="place free">6</div>
+                <div class="place unavailable">7</div><div class="place free">8</div>
+              </div>
+            </div>
+            <div class="section-block" style="margin:0;">
+              <div class="section-title-mini">Участок 2</div>
+              <div class="place-grid">
+                <div class="place free">1</div><div class="place free">2</div>
+                <div class="place occupied">3</div><div class="place free">4</div>
+                <div class="place reserved">5</div><div class="place occupied">6</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>

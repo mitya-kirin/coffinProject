@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Карта кладбища — Ритуальная служба</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <header id="header"></header>
+  <main>
+    <div class="page-head">
+      <div class="page-head-inner">
+        <div>
+          <h1>Электронная карта кладбища</h1>
+          <p class="breadcrumb">Главная / Карта кладбища</p>
+        </div>
+        <a href="burial-search.html" class="btn btn-outline">Поиск захоронений</a>
+      </div>
+    </div>
+
+    <div class="section">
+      <div id="alertBox" class="alert"></div>
+      <div class="toolbar">
+        <select class="form-control" id="cemeterySelect"></select>
+        <div class="place-legend">
+          <span><span class="legend-dot" style="background:var(--green)"></span>свободно</span>
+          <span><span class="legend-dot" style="background:var(--red)"></span>занято</span>
+          <span><span class="legend-dot" style="background:var(--yellow)"></span>зарезервировано</span>
+          <span><span class="legend-dot" style="background:#b8bcc6"></span>недоступно</span>
+        </div>
+      </div>
+
+      <div class="grid" style="grid-template-columns: 1fr 360px; gap: 20px; align-items:start;" id="cemLayout">
+        <div class="cemetery-layout" id="cemeteryMap">
+          <div class="empty-state" style="padding:60px;">
+            <p>Выберите кладбище для отображения карты</p>
+          </div>
+        </div>
+        <div class="card" style="padding:20px;position:sticky;top:84px;" id="placeInfoCard">
+          <h3 class="mb-16">Информация о месте</h3>
+          <div id="placeInfo">
+            <p class="text-muted text-sm">Нажмите на место на карте, чтобы увидеть информацию.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer id="footer"></footer>
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/cemetery.js"></script>
+</body>
+</html>

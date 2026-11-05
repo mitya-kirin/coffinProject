@@ -1,0 +1,10 @@
+открыть powershell
+
+запуск:
+Start-Process -FilePath "node" -ArgumentList "server.js" -WorkingDirectory "C:\Users\admin\OneDrive\Desktop\coffinProject\backend" -WindowStyle Hidden
+
+выкл:
+Get-NetTCPConnection -LocalPort 5000 -State Listen | Select-Object -ExpandProperty OwningProcess | ForEach-Object { taskkill /PID $_ /F }
+
+Чтобы открыть, зайти на 
+http://localhost:5000/

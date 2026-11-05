@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Каталог услуг — Ритуальная служба</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <header id="header"></header>
+  <main>
+    <div class="page-head">
+      <div class="page-head-inner">
+        <div>
+          <h1>Каталог ритуальных услуг</h1>
+          <p class="breadcrumb">Главная / Услуги</p>
+        </div>
+        <div class="row-flex">
+          <a href="calculator.html" class="btn btn-primary">Рассчитать стоимость</a>
+          <a href="order.html" class="btn btn-outline">Оформить заявку</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div id="alertBox" class="alert"></div>
+
+      <div class="search-panel">
+        <div class="form-row">
+          <div class="form-group" style="flex:1;">
+            <label class="form-label">Поиск услуг и товаров</label>
+            <input type="text" class="form-control" id="searchInput" placeholder="Например: гроб, венок, катафалк, поминки..." />
+          </div>
+          <div class="form-group" style="min-width:200px;">
+            <label class="form-label">Сортировка</label>
+            <select class="form-control" id="sortSelect">
+              <option value="">По умолчанию</option>
+              <option value="price_asc">Сначала дешевле</option>
+              <option value="price_desc">Сначала дороже</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="category-tabs" id="categoryTabs"></div>
+
+      <div class="grid grid-3" id="servicesGrid"></div>
+      <div class="empty-state hidden" id="emptyState">
+        <div class="empty-icon">🔍</div>
+        <p>Ничего не найдено. Попробуйте изменить параметры поиска или выберите другую категорию.</p>
+      </div>
+    </div>
+  </main>
+  <footer id="footer"></footer>
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/services.js"></script>
+</body>
+</html>

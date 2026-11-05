@@ -1,0 +1,87 @@
+панель админа:
+убрать быстрые действия, панель управления
+при нажатии на кнопки сбоку нет дизайна страницы, ошибка:
+ Uncaught SyntaxError: Unexpected token '<' (at api.js:1:1)
+auth.js:1 Uncaught SyntaxError: Unexpected token '<' (at auth.js:1:1)
+common.js:1 Uncaught SyntaxError: Unexpected token '<' (at common.js:1:1)
+home.js:1 Uncaught SyntaxError: Unexpected token '<' (at home.js:1:1)
+услуги -- кладбище, захоронение, свободные места
+заказы -- кто какой заказ сделал, внутри описание (товар, услуга)
+пользователи -- клиенты, админы, обработчик заказов
+админ видит всех пользователей и может назначать права, смена цены, удаление услуг и товаров
+пользователю доступно только просмотр, оформление заказа и писать сообщение обработчикам заказов
+обработчик может подтверждать бронь на кладбище, проверка оплаты и заказов, доступ ко всем заказам, отвечать пользователям, управление уведомлениями
+
+документы это свидетельства о смерти(для админа и клиент, который привязал документ) и местоположение на кладбище, чеки заказа
+кладбища это местоположение кладбищ в городе
+места это места на кладбище для похорон
+
+клиент кидает св-тво о смерти и благодаря этому может бронировать, обработчик видит и подтверждает бронь на место
+
+вкладка пользователей, дата регистрации на сайта, для агента и админа нет ее
+регистрация только для пользователя, агент добавляется админов вручную
+
+главная: 
+невидимая кнопка регистрации ошибка:
+VM365:2 Uncaught TypeError: Cannot read properties of undefined (reading 'startTime')
+    at et.reportAllChanges (<anonymous>:2:19429)
+    at <anonymous>:2:13070
+    at <anonymous>:2:331
+    at d (<anonymous>:2:6141)
+    at <anonymous>:2:6326
+    at <anonymous>:2:2895
+    at n.timeout (<anonymous>:2:5652)
+
+кнопки раздела и клиентам не видно ошибка:
+VM389:2 Uncaught TypeError: Cannot read properties of undefined (reading 'startTime')
+    at et.reportAllChanges (<anonymous>:2:19429)
+    at <anonymous>:2:13070
+    at <anonymous>:2:331
+    at d (<anonymous>:2:6141)
+    at <anonymous>:2:6326
+    at x (<anonymous>:2:5486)
+    at g (<anonymous>:2:6248)
+    at <anonymous>:2:6512
+    at u (<anonymous>:2:735)
+текст ритуальная служба и контакты не виден
+расписать каталог и товары
+
+ошибка на главной страницы снова:
+VM435:2 Uncaught TypeError: Cannot read properties of undefined (reading 'startTime')
+    at et.reportAllChanges (<anonymous>:2:19429)
+    at <anonymous>:2:13070
+    at <anonymous>:2:331
+    at d (<anonymous>:2:6141)
+    at <anonymous>:2:6326
+    at <anonymous>:2:2895
+    at n.timeout (<anonymous>:2:5652)
+et.reportAllChanges @ VM435:2
+(анонимная) @ VM435:2
+(анонимная) @ VM435:2
+d @ VM435:2
+(анонимная) @ VM435:2
+(анонимная) @ VM435:2
+n.timeout @ VM435:2
+VM435:2 Uncaught TypeError: Cannot read properties of undefined (reading 'startTime')
+    at et.reportAllChanges (<anonymous>:2:19429)
+    at <anonymous>:2:13070
+    at <anonymous>:2:331
+    at d (<anonymous>:2:6141)
+    at <anonymous>:2:6326
+    at <anonymous>:2:2895
+    at n.timeout (<anonymous>:2:5652)
+
+убрать контакты и обратную связь -- клиент регистрируется
+поиск захоронений убрать для незарегистрированных пользователей
+обновить карту кладбища
+оформление заявки только для зарегистрированных пользователей
+
+все верхние и нижние кнопки не работают
+
+выбрать услуги сделать поисковиком
+на вкладке услуг сделать категории вкладками и при нажатии открывать товары
+
+у пользователя в личном кабинете убрать новое напоминание
+
+подумать над доставкой, сроки и ее организация доставки, статус доставки
+

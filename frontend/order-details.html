@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Заказ — Ритуальная служба</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <header id="header"></header>
+  <main>
+    <div class="page-head">
+      <div class="page-head-inner">
+        <div>
+          <h1 id="orderNumber">Заказ</h1>
+          <p class="breadcrumb" id="orderBreadcrumb">Главная / Заказы / Заказ</p>
+        </div>
+        <div id="pageHeadActions"></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div id="alertBox" class="alert"></div>
+
+      <div class="card" style="padding:20px;margin-bottom:20px;">
+        <h3 class="mb-16">Статус заказа</h3>
+        <div class="progress-track mb-8"><div class="progress-fill" id="statusProgress" style="width:0%"></div></div>
+        <div class="step" id="currentStatusChip" style="font-size:1rem;padding:10px 18px;">Загрузка...</div>
+        <div class="steps mt-16" id="statusSteps"></div>
+      </div>
+
+      <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 20px;" id="detailsGrid">
+        <div>
+          <div class="card" style="padding:20px;margin-bottom:20px;">
+            <h3 class="mb-16">Информация о заказе</h3>
+            <div class="info-grid" id="orderInfoGrid"></div>
+          </div>
+          <div class="card" style="padding:20px;margin-bottom:20px;">
+            <h3 class="mb-16">Услуги</h3>
+            <div class="table-wrap"><table class="table" id="itemsTable">
+              <thead><tr><th>Услуга</th><th>Категория</th><th>Кол-во</th><th>Цена</th><th>Сумма</th></tr></thead>
+              <tbody id="itemsBody"></tbody>
+            </table></div>
+          </div>
+        </div>
+        <div>
+          <div class="card" style="padding:20px;margin-bottom:20px;">
+            <h3 class="mb-16">Агент</h3>
+            <div id="agentBlock"></div>
+          </div>
+          <div class="card" style="padding:20px;margin-bottom:20px;">
+            <h3 class="mb-16">Документы</h3>
+            <div id="docsBlock"></div>
+          </div>
+          <div class="card" style="padding:20px;margin-bottom:20px;">
+            <h3 class="mb-16">История изменения статусов</h3>
+            <div id="historyBlock"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card no-print" style="padding:20px;" id="chatCard">
+        <h3 class="mb-16">Чат с агентом</h3>
+        <div class="chat-box" id="chatBox"></div>
+        <div class="chat-input">
+          <input type="text" class="form-control" id="chatInput" placeholder="Введите сообщение..." />
+          <button class="btn btn-primary" id="chatSendBtn">Отправить</button>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer id="footer"></footer>
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/order-details.js"></script>
+</body>
+</html>

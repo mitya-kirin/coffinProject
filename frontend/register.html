@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Регистрация — Ритуальная служба</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <header id="header"></header>
+  <main>
+    <div class="auth-wrap">
+      <div class="auth-card">
+        <h1>Регистрация</h1>
+        <p class="auth-sub">Создайте аккаунт клиента, чтобы оформить заявку</p>
+        <div id="alertBox" class="alert"></div>
+        <form id="registerForm">
+          <div class="form-group">
+            <label class="form-label form-required">ФИО</label>
+            <input type="text" class="form-control" id="fullName" placeholder="Фамилия Имя Отчество" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label form-required">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="you@example.ru" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Телефон</label>
+            <input type="tel" class="form-control" id="phone" placeholder="+7 ___ ___-__-__" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Адрес</label>
+            <input type="text" class="form-control" id="address" placeholder="г. Москва, ул. ..." />
+          </div>
+          <div class="form-group">
+            <label class="form-label form-required">Пароль (не менее 6 символов)</label>
+            <input type="password" class="form-control" id="password" placeholder="Пароль" required minlength="6" />
+          </div>
+          <div class="form-group">
+            <label class="form-label form-required">Повторите пароль</label>
+            <input type="password" class="form-control" id="password2" placeholder="Повторите пароль" required />
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Зарегистрироваться</button>
+        </form>
+        <p class="auth-links">Уже есть аккаунт? <a href="login.html">Войти</a></p>
+        <p class="auth-links text-sm"><a href="index.html">← На главную</a></p>
+      </div>
+    </div>
+  </main>
+  <footer id="footer"></footer>
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/register.js"></script>
+</body>
+</html>

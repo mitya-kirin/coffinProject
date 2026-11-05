@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Документы — Ритуальная служба</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <header id="header"></header>
+  <main>
+    <div class="page-head">
+      <div class="page-head-inner">
+        <div>
+          <h1>Документы</h1>
+          <p class="breadcrumb">Главная / Документы</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div id="alertBox" class="alert"></div>
+      <div class="form-group" style="max-width:420px;">
+        <label class="form-label">Заказ</label>
+        <select class="form-control" id="docOrderSelect"></select>
+      </div>
+      <div id="docsWrap"></div>
+      <div class="empty-state hidden" id="docsEmpty">
+        <div class="empty-icon">🗂️</div>
+        <p>Выберите заказ, чтобы увидеть список документов</p>
+      </div>
+    </div>
+  </main>
+  <footer id="footer"></footer>
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/documents.js"></script>
+</body>
+</html>

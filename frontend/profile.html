@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Личный кабинет — Ритуальная служба</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <header id="header"></header>
+  <main>
+    <div class="page-head">
+      <div class="page-head-inner">
+        <div>
+          <h1>Личный кабинет</h1>
+          <p class="breadcrumb">Главная / Личный кабинет</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div id="alertBox" class="alert"></div>
+      <div class="tabs">
+        <button class="tab active" data-tab="profileTab">Профиль</button>
+        <button class="tab" data-tab="passwordTab">Смена пароля</button>
+      </div>
+
+      <div id="profileTab" class="tab-content">
+        <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 20px;" id="profileLayout">
+          <div class="card" style="padding:22px;">
+            <h3 class="mb-16">Личные данные</h3>
+            <form id="profileForm">
+              <div class="form-group">
+                <label class="form-label">ФИО</label>
+                <input type="text" class="form-control" id="pFullName" />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Телефон</label>
+                <input type="tel" class="form-control" id="pPhone" />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-control" id="pEmail" disabled />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Адрес</label>
+                <input type="text" class="form-control" id="pAddress" />
+              </div>
+              <button type="submit" class="btn btn-primary">Сохранить изменения</button>
+            </form>
+          </div>
+          <div>
+            <div class="card" style="padding:22px;margin-bottom:20px;">
+              <h3 class="mb-16">Моя роль</h3>
+              <p id="pRole" class="mb-8">—</p>
+              <p id="pWorkHours" class="text-muted text-sm">—</p>
+            </div>
+            <div class="card" style="padding:22px;">
+              <h3 class="mb-16">Статистика</h3>
+              <p class="text-muted text-sm" id="pCreatedAt">—</p>
+              <ul style="margin-top:10px;display:grid;gap:8px;" id="pStats"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="passwordTab" class="tab-content hidden">
+        <div class="card" style="padding:22px;max-width:460px;">
+          <h3 class="mb-16">Изменение пароля</h3>
+          <form id="passwordForm">
+            <div class="form-group">
+              <label class="form-label form-required">Текущий пароль</label>
+              <input type="password" class="form-control" id="pwCurrent" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label form-required">Новый пароль</label>
+              <input type="password" class="form-control" id="pwNew" required minlength="6" />
+            </div>
+            <div class="form-group">
+              <label class="form-label form-required">Повторите новый пароль</label>
+              <input type="password" class="form-control" id="pwNew2" required />
+            </div>
+            <button type="submit" class="btn btn-primary">Изменить пароль</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer id="footer"></footer>
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/profile.js"></script>
+</body>
+</html>

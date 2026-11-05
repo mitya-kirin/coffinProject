@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Мои заказы — Ритуальная служба</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <header id="header"></header>
+  <main>
+    <div class="page-head">
+      <div class="page-head-inner">
+        <div>
+          <h1 id="ordersTitle">Мои заказы</h1>
+          <p class="breadcrumb">Главная / Заказы</p>
+        </div>
+        <a href="order.html" class="btn btn-primary">Новая заявка</a>
+      </div>
+    </div>
+
+    <div class="section">
+      <div id="alertBox" class="alert"></div>
+      <div class="toolbar">
+        <select class="form-control" id="statusFilter">
+          <option value="">Все статусы</option>
+        </select>
+      </div>
+      <div id="ordersTableWrap" class="table-wrap"></div>
+      <div class="empty-state hidden" id="ordersEmpty">
+        <div class="empty-icon">📄</div>
+        <p>Заказов пока нет</p>
+        <a href="order.html" class="btn btn-primary">Оформить первую заявку</a>
+      </div>
+    </div>
+  </main>
+  <footer id="footer"></footer>
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/orders.js"></script>
+</body>
+</html>

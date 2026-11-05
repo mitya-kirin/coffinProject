@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Сообщения — Ритуальная служба</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <header id="header"></header>
+  <main>
+    <div class="page-head">
+      <div class="page-head-inner">
+        <div>
+          <h1>Сообщения</h1>
+          <p class="breadcrumb">Главная / Сообщения</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div id="alertBox" class="alert"></div>
+      <div class="grid" style="grid-template-columns: 320px 1fr; gap: 20px;" id="chatLayout">
+        <div>
+          <div class="card" style="padding:18px;">
+            <h3 class="mb-16">Выберите заказ</h3>
+            <div id="msgOrderList"></div>
+            <div class="empty-state" id="msgOrdersEmpty" style="padding:16px;">
+              <p class="text-sm">Нет заказов</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="card" style="padding:20px;">
+            <h3 class="mb-16" id="msgOrderTitle">Переписка</h3>
+            <div class="chat-box" id="msgChatBox">
+              <div class="empty-state" style="padding:30px;"><p class="text-sm">Выберите заказ, чтобы начать переписку</p></div>
+            </div>
+            <div class="chat-input">
+              <input type="text" class="form-control" id="msgChatInput" placeholder="Введите сообщение..." />
+              <button class="btn btn-primary" id="msgChatSend">Отправить</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer id="footer"></footer>
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/messages.js"></script>
+</body>
+</html>

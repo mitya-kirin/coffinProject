@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Поиск захоронений — Ритуальная служба</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <header id="header"></header>
+  <main>
+    <div class="page-head">
+      <div class="page-head-inner">
+        <div>
+          <h1>Поиск захоронений</h1>
+          <p class="breadcrumb">Главная / Поиск захоронений</p>
+        </div>
+        <a href="cemetery.html" class="btn btn-outline">Карта кладбища</a>
+      </div>
+    </div>
+
+    <div class="section">
+      <div id="alertBox" class="alert"></div>
+      <div class="filter-panel">
+        <form id="searchForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Фамилия</label>
+              <input type="text" class="form-control" id="sLastName" placeholder="Иванов" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Имя</label>
+              <input type="text" class="form-control" id="sFirstName" placeholder="Иван" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Отчество</label>
+              <input type="text" class="form-control" id="sMiddleName" placeholder="Иванович" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Дата рождения</label>
+              <input type="date" class="form-control" id="sBirth" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Дата смерти</label>
+              <input type="date" class="form-control" id="sDeath" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Номер места</label>
+              <input type="text" class="form-control" id="sPlaceNum" placeholder="Например: 1" />
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Найти</button>
+        </form>
+      </div>
+
+      <div id="searchResults"></div>
+      <div class="empty-state" id="searchEmpty">
+        <div class="empty-icon">🔍</div>
+        <p>Введите данные для поиска. Можно искать по ФИО или по датам.</p>
+      </div>
+    </div>
+  </main>
+  <footer id="footer"></footer>
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/burial-search.js"></script>
+</body>
+</html>

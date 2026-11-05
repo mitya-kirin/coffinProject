@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Рассчитать стоимость — Ритуальная служба</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <header id="header"></header>
+  <main>
+    <div class="page-head">
+      <div class="page-head-inner">
+        <div>
+          <h1>Расчёт предварительной стоимости</h1>
+          <p class="breadcrumb">Главная / Рассчитать стоимость</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <p class="text-muted mb-24">Выберите услуги и укажите количество — стоимость пересчитается автоматически. Итог является предварительным и может быть уточнён агентом.</p>
+
+      <div class="grid" style="grid-template-columns: 1fr 380px; gap: 28px;" id="calcLayout">
+        <div class="card" style="padding:22px;">
+          <h3 class="mb-16">Выбор услуг</h3>
+          <div class="form-group">
+            <label class="form-label">Категория</label>
+            <select class="form-control" id="calcCategory">
+              <option value="">Все категории</option>
+            </select>
+          </div>
+          <div id="calcServiceList" class="mt-16"></div>
+          <div class="empty-state hidden" id="calcEmpty">
+            <div class="empty-icon">📋</div>
+            <p>Услуги не найдены</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="card" style="padding:22px;position:sticky;top:84px;">
+            <h3 class="mb-16">Выбранные услуги</h3>
+            <div id="calcCart"></div>
+            <div class="empty-state" id="calcCartEmpty" style="padding:20px 10px;">
+              <p class="text-sm">Пока ничего не выбрано</p>
+            </div>
+            <div class="summary-box mt-16">
+              <div class="summary-row"><span>Услуги</span><span id="calcSubtotal">0 ₽</span></div>
+              <div class="summary-row"><span>Количество позиций</span><span id="calcCount">0</span></div>
+              <div class="summary-row total"><span>Итого (предв.)</span><span id="calcTotal">0 ₽</span></div>
+            </div>
+            <div class="row-flex mt-16">
+              <a href="order.html" class="btn btn-primary" style="flex:1;">Оформить заявку</a>
+            </div>
+            <p class="text-sm text-muted mt-8">Для оформления заявки необходимо авторизоваться.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer id="footer"></footer>
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/calculator.js"></script>
+</body>
+</html>

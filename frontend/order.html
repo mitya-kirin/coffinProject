@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Оформить заявку — Ритуальная служба</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <header id="header"></header>
+  <main>
+    <div class="page-head">
+      <div class="page-head-inner">
+        <div>
+          <h1>Оформление онлайн-заявки</h1>
+          <p class="breadcrumb">Главная / Оформить заявку</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div id="alertBox" class="alert"></div>
+
+      <div class="grid" style="grid-template-columns: 1fr 380px; gap: 28px;" id="orderLayout">
+        <div>
+          <div class="form-card">
+            <h3 class="mb-16">1. Выбор услуг</h3>
+            <div class="form-group">
+              <label class="form-label">Категория</label>
+              <select class="form-control" id="orderCategory">
+                <option value="">Все категории</option>
+              </select>
+            </div>
+            <div id="orderServiceList"></div>
+          </div>
+
+          <div class="form-card mt-24">
+            <h3 class="mb-16">2. Данные заявителя</h3>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label form-required">ФИО заявителя</label>
+                <input type="text" class="form-control" id="oFullName" />
+              </div>
+              <div class="form-group">
+                <label class="form-label form-required">Телефон</label>
+                <input type="tel" class="form-control" id="oPhone" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label form-required">Email</label>
+                <input type="email" class="form-control" id="oEmail" />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Адрес</label>
+                <input type="text" class="form-control" id="oAddress" />
+              </div>
+            </div>
+          </div>
+
+          <div class="form-card mt-24">
+            <h3 class="mb-16">3. Условия оказания услуги</h3>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Желаемая дата</label>
+                <input type="date" class="form-control" id="oDate" />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Желаемое время</label>
+                <input type="time" class="form-control" id="oTime" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Кладбище</label>
+                <select class="form-control" id="oCemetery">
+                  <option value="">Не выбрано</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Необходимо захоронение</label>
+                <select class="form-control" id="oNeedBurial">
+                  <option value="0">Нет</option>
+                  <option value="1">Да</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Дополнительные сведения</label>
+              <textarea class="form-control" id="oAdditional" placeholder="Например: информация о покойном, особые пожелания..."></textarea>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Комментарий</label>
+              <textarea class="form-control" id="oComment" placeholder="Комментарий к заказу"></textarea>
+            </div>
+          </div>
+
+          <div class="form-card mt-24">
+            <h3 class="mb-16">Доставка</h3>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Нужна доставка</label>
+                <select class="form-control" id="oNeedDelivery">
+                  <option value="0">Нет</option>
+                  <option value="1">Да</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Желаемая дата доставки</label>
+                <input type="date" class="form-control" id="oDeliveryDate" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Адрес доставки</label>
+              <input type="text" class="form-control" id="oDeliveryAddress" placeholder="Адрес, куда доставить товары и принадлежности" />
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="card" style="padding:22px;position:sticky;top:84px;">
+            <h3 class="mb-16">Состав заявки</h3>
+            <div id="orderCart"></div>
+            <div class="empty-state hidden" id="orderCartEmpty" style="padding:16px 10px;">
+              <p class="text-sm">Добавьте хотя бы одну услугу</p>
+            </div>
+            <div class="summary-box mt-16">
+              <div class="summary-row"><span>Услуги</span><span id="orderSubtotal">0 ₽</span></div>
+              <div class="summary-row total"><span>Итого</span><span id="orderTotal">0 ₽</span></div>
+            </div>
+            <button class="btn btn-green btn-block mt-16" id="submitOrderBtn">Отправить заявку</button>
+            <p class="text-sm text-muted mt-8">После отправки мы присвоим заявке номер и свяжемся с вами.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer id="footer"></footer>
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/order.js"></script>
+</body>
+</html>

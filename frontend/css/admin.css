@@ -1,0 +1,36 @@
+/* Admin-specific layout */
+.admin-layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+.admin-sidebar { position: sticky; top: 84px; }
+.admin-sidebar .card { padding: 12px; }
+.admin-nav a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  color: var(--graphite);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+.admin-nav a:hover { background: var(--gray-light); color: var(--dark); }
+.admin-nav a.active { background: var(--dark); color: var(--white); }
+
+.stat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; margin-bottom: 24px; }
+
+@media (max-width: 860px) {
+  .admin-layout { grid-template-columns: 1fr; }
+  .admin-sidebar { position: static; }
+}
+
+/* Service editor rows */
+.editable-row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+
+/* Inline tables in admin */
+.mini-form { display: flex; gap: 8px; flex-wrap: wrap; align-items: flex-end; }
+.mini-form .form-group { margin-bottom: 0; }
+.mini-form .form-control { min-width: 120px; }
