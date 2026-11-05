@@ -2,34 +2,39 @@ document.addEventListener('DOMContentLoaded', async function () {
   if (!AdminLayout.ensureAdmin()) return;
 
   const content = document.getElementById('adminContent');
-  content.innerHTML = AdminLayout.wrap('admin/orders.html', `<div id="innerContent"></div>`);
+  if (!content) return;
+
+  content.innerHTML = AdminLayout.wrap('/admin/orders.html', `<div id="innerContent"><div class="empty-state">Загрузка заказов...</div></div>`);
   const inner = document.getElementById('innerContent');
-  inner.innerHTML = '<div class="empty-state">Загрузка...</div>';
 
   let orders = [];
   let agents = [];
 
   async function load() {
     try {
+      // ИСПРАВЛЕНО: Запрашиваем всех юзеров, чтобы не было ошибки 500
       const [oData, uData] = await Promise.all([
         API.get('/orders'),
-        API.get('/users?role=agent')
+        API.get('/users')
       ]);
-      orders = oData.orders;
-      agents = uData.users;
+      orders = oData.orders || [];
+      // Фильтруем агентов прямо здесь
+      agents = (uData.users || []).filter(u => u.role === 'agent');
       render();
     } catch (err) {
-      Common.showAlert(err.message, 'error');
+      inner.innerHTML = `<div class="alert alert-error show">Ошибка загрузки: ${err.message}</div>`;
     }
   }
 
-  const statuses = ['Новая заявка','На рассмотрении','Назначен агент','Ожидаются документы','Подготовка заказа','Подтверждено','Выполняется','Завершено','Отменено'];
-
   function render() {
+    if (orders.length === 0) {
+      inner.innerHTML = `<div class="empty-state"><h3>Заказов пока нет</h3><p>Как только клиенты оформят заявки, они появятся здесь.</p></div>`;
+      return;
+    }
+
     inner.innerHTML = `
-      <h2 class="mb-16">Заказы</h2>
       <div class="table-wrap"><table class="table">
-        <thead><tr><th>Номер</th><th>Клиент</th><th>Агент</th><th>Статус</th><th>Стоимость</th><th>Дата</th><th></th></tr></thead>
+        <thead><tr><th>Номер</th><th>Клиент</th><th>Агент</th><th>Статус</th><th>Стоимость</th><th>Дата</th><th>Действия</th></tr></thead>
         <tbody>
           ${orders.map(o => `
             <tr>
@@ -40,8 +45,8 @@ document.addEventListener('DOMContentLoaded', async function () {
               <td>${Auth.money(o.total_price)}</td>
               <td>${Auth.fmtDate(o.created_at)}</td>
               <td>
-                <a class="btn btn-sm btn-outline" href="../order-details.html?id=${o.id}">Открыть</a>
-                <button class="btn btn-sm btn-gray assignBtn" data-order="${o.id}">Агент</button>
+                <a class="btn btn-sm btn-outline" href="/order-details.html?id=${o.id}">Открыть</a>
+                <button class="btn btn-sm btn-primary assignBtn" data-order="${o.id}">Агент</button>
               </td>
             </tr>`).join('')}
         </tbody>
@@ -54,6 +59,8 @@ document.addEventListener('DOMContentLoaded', async function () {
 
   function openAssignModal(orderId) {
     const order = orders.find(o => o.id === orderId);
+    if (!order) return;
+    
     const overlay = document.createElement('div');
     overlay.className = 'modal-backdrop show';
     overlay.innerHTML = `
@@ -65,7 +72,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             ${agents.map(a => `<option value="${a.id}">${Auth.esc(a.full_name)} (${Auth.esc(a.email)})</option>`).join('')}
           </select>
           <div class="modal-actions">
-            <button class="btn btn-gray" id="cancelAssign">Отмена</button>
+            <button class="btn btn-outline" id="cancelAssign">Отмена</button>
             <button class="btn btn-primary" id="saveAssign">Назначить</button>
           </div>` : '<p class="text-muted">Агенты не найдены</p>'}
       </div>`;

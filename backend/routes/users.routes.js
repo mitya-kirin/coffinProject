@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const controller = require('../controllers/users.controller');
-const { authRequired, requireRole, requireAdmin } = require('../middleware/auth.middleware');
+const { authRequired, requireAdmin } = require('../middleware/auth.middleware');
 
 router.get('/', authRequired, requireAdmin, controller.listUsers);
 router.get('/:id', authRequired, controller.getUser);

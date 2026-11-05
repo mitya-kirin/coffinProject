@@ -3,11 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ритуальная служба — организация и сопровождение заказов ритуальных услуг</title>
+  <title>Ритуальная служба — организация и сопровождение заказов</title>
   <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/components.css">
-  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/style.css?v=666">
 </head>
 <body>
   <header id="header"></header>
@@ -19,7 +17,7 @@
       <div class="hero-actions">
         <a href="services.html" class="btn btn-primary">Выбрать услуги и товары</a>
         <a href="order.html" class="btn btn-primary">Оформить заявку</a>
-        <a href="cemetery.html" class="btn btn-primary">Карта кладбища</a>
+        <a href="cemetery.html" class="btn btn-outline">Карта кладбища</a>
       </div>
     </section>
 
@@ -40,7 +38,7 @@
       </div>
       <div class="grid grid-3" id="homeServices"></div>
       <div class="center mt-32">
-        <a href="services.html" class="btn btn-primary">Открыть полный каталог</a>
+        <a href="services.html" class="btn btn-outline">Открыть полный каталог</a>
       </div>
     </section>
 
@@ -52,7 +50,7 @@
       <div class="grid grid-3" id="homeCategories"></div>
     </section>
 
-    <section class="section" style="background:var(--gray-light);border-radius:0;">
+    <section class="section" style="background:var(--dark-2);border-radius:0; border-top: 1px solid var(--gray-border); border-bottom: 1px solid var(--gray-border);">
       <div class="section-title">
         <h2>Как оформить заказ</h2>
         <p>Порядок действий — от заявки до завершения</p>
@@ -65,15 +63,15 @@
         <div>
           <h2 class="mb-8">Электронная карта кладбища</h2>
           <p class="text-muted mb-16">Просматривайте участки и места захоронений, ищите захоронения по ФИО и датам, отслеживайте свободные места. Для поиска захоронений и оформления заявки необходимо войти в личный кабинет.</p>
-          <div class="row-flex">
+          <div class="row-flex mb-16">
             <span class="text-sm"><span class="legend-dot" style="background:var(--green)"></span>свободное</span>
             <span class="text-sm"><span class="legend-dot" style="background:var(--red)"></span>занятое</span>
             <span class="text-sm"><span class="legend-dot" style="background:var(--yellow)"></span>зарезервировано</span>
-            <span class="text-sm"><span class="legend-dot" style="background:#b8bcc6"></span>недоступно</span>
+            <span class="text-sm"><span class="legend-dot" style="background:#444"></span>недоступно</span>
           </div>
           <div class="row-flex mt-16">
             <a href="cemetery.html" class="btn btn-primary">Открыть карту</a>
-            <a href="login.html" class="btn btn-outline">Войти для поиска захоронений</a>
+            <a href="login.html" class="btn btn-outline">Войти для поиска</a>
           </div>
         </div>
         <div class="card" style="padding:20px;">
